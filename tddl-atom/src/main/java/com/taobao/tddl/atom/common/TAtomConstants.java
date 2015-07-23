@@ -1,10 +1,10 @@
 package com.taobao.tddl.atom.common;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.apache.commons.lang.StringUtils;
 
 /**
  * TAtom数据源的常量设置类
@@ -100,7 +100,8 @@ public class TAtomConstants {
     /**
      * 根据dbKey和userName获得对应的passwd的dataId
      * 
-     * @param dbKey
+     * @param dbName
+     * @param dbType
      * @param userName
      * @return
      */
