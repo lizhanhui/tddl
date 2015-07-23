@@ -1,11 +1,10 @@
 package com.taobao.tddl.qatest;
 
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
+import com.taobao.diamond.mockserver.MockServer;
+import com.taobao.tddl.common.model.ExtraCmd;
+import com.taobao.tddl.matrix.jdbc.TDataSource;
+import com.taobao.tddl.qatest.util.LoadPropsUtil;
+import com.taobao.tddl.qatest.util.PrepareData;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.junit.After;
 import org.junit.Assert;
@@ -14,11 +13,11 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.taobao.diamond.mockserver.MockServer;
-import com.taobao.tddl.common.model.ExtraCmd;
-import com.taobao.tddl.matrix.jdbc.TDataSource;
-import com.taobao.tddl.qatest.util.LoadPropsUtil;
-import com.taobao.tddl.qatest.util.PrepareData;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * 基本测试类
@@ -52,7 +51,7 @@ public class BaseMatrixTestCase extends PrepareData {
         // setMatrixMockInfo(MATRIX_DBGROUPS_PATH, TDDL_DBGROUPS);
 
         if (us == null) {
-            if (dbType.equals("bdb") || dbType == "") {
+            if (dbType.equals("bdb") || dbType .isEmpty()) {
                 JDBCClient(dbType);
             } else if (dbType.equals("mysql") || dbType.equals("tdhs") || dbType.equals("hbase")) {
                 JDBCClient(dbType, false);

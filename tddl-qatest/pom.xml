@@ -7,7 +7,6 @@
 		<version>5.0.0-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<groupId>com.taobao.tddl</groupId>
 	<artifactId>tddl-qatest</artifactId>
 	<packaging>jar</packaging>
 	<name>${project.artifactId} module for tddl ${project.version}</name>
@@ -43,12 +42,21 @@
 			<version>${project.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!--
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>tddl-repo-oceanbase</artifactId>
 			<version>${project.version}</version>
 			<scope>test</scope>
 		</dependency>
+		-->
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
